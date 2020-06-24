@@ -259,12 +259,12 @@ open class EasyTipView: UIView {
         public init() {}
     }
     
-    private enum Content: CustomStringConvertible {
+    public enum Content: CustomStringConvertible {
         
         case text(String)
         case view(UIView)
         
-        var description: String {
+        public var description: String {
             switch self {
             case .text(let text):
                 return "text : '\(text)'"
@@ -352,7 +352,7 @@ open class EasyTipView: UIView {
         self.init(content: .view(contentView), preferences: preferences, delegate: delegate)
     }
     
-    private init (content: Content, preferences: Preferences = EasyTipView.globalPreferences, delegate: EasyTipViewDelegate? = nil) {
+    public init (content: Content, preferences: Preferences = EasyTipView.globalPreferences, delegate: EasyTipViewDelegate? = nil) {
         
         self.content = content
         self.preferences = preferences
